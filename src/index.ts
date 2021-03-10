@@ -12,6 +12,7 @@ function objectLineFinderRecursion(targetObject: interfaceObject, target: string
   // If object { first key starts at line 2
   let line = 2;
   for (const [key, value] of Object.entries(targetObject)) {
+    if (key === 'default') { break; }
     if (key == target) {
       matchingLines.push(line);
     }
@@ -20,6 +21,16 @@ function objectLineFinderRecursion(targetObject: interfaceObject, target: string
         // Add 1 for the closing bracket
         line += value.length + 1;
       }
+    } else if (typeof(value) == 'object') {
+      const [recurMatchingLines, recurLine] = objectLineFinderRecursion(value, target);
+      if (recurMatchingLines){
+        let castRecurMatchingLines = recurMatchingLines as number[];
+        castRecurMatchingLines = castRecurMatchingLines.map((i: number) => line + i - 1);
+        for (let i=0; i<castRecurMatchingLines.length; i++){
+          matchingLines.push(castRecurMatchingLines[i]);
+        }
+      }
+      line += recurLine as number - 1;
     }
     line += 1;
   }

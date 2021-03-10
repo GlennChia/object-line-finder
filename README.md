@@ -21,6 +21,12 @@ npm i
 
 This [Stackoverflow link](https://stackoverflow.com/questions/280713/elements-order-in-a-for-in-loop) talks about how elements of an object are looped in the order they are declared if all the keys are strings. However, keys that are numbers are always first.
 
+Jest somehow adds an additional `default` key that maps to the entire object. This causes the code to break. A temporary fix is to exclude the default key when doing the checks.
+
+```typescript
+if (key === 'default') { break; }
+```
+
 # Contributing <a name="Contributing"></a>
 
 We welcome community contributions and pull requests.
