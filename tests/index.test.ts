@@ -1,9 +1,10 @@
-import sum from '../src/index';
+import objectLineFinder from "../src/index";
+import * as dataTest1 from "./examples/test1.json";
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
+test("Testset 1: finds the line number of firstName", () => {
+  expect(objectLineFinder(dataTest1, 'firstName')).toStrictEqual([2]);
 });
 
-test('adds 2 + 3 to equal 5', () => {
-  expect(sum(2, 3)).toBe(5);
+test("Testset 1: finds the line number of age", () => {
+  expect(objectLineFinder(dataTest1, 'age')).toStrictEqual([4]);
 });
