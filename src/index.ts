@@ -16,11 +16,9 @@ function objectLineFinderRecursion(targetObject: interfaceObject, target: string
     if (key == target) {
       matchingLines.push(line);
     }
-    if (isArray(value)){
-      if (typeof(value[0]) != 'object') {
-        // Add 1 for the closing bracket
-        line += value.length + 1;
-      }
+    if (isArray(value) && typeof(value[0]) != 'object'){
+      // Add 1 for the closing bracket
+      line += value.length + 1;
     } else if (typeof(value) == 'object') {
       const [recurMatchingLines, recurLine] = objectLineFinderRecursion(value, target);
       if (recurMatchingLines){
