@@ -1,8 +1,7 @@
 // eslint-disable-next-line
 type interfaceObject = {[key: string]: any};
 
-// eslint-disable-next-line
-function isArray(value: any): boolean{
+function isArray(value: unknown): boolean{
   return Object.prototype.toString.call(value) == '[object Array]';
 }
 
@@ -17,8 +16,10 @@ function objectLineFinderRecursion(targetObject: interfaceObject, target: string
       matchingLines.push(line);
     }
     if (isArray(value) && typeof(value[0]) != 'object'){
-      // Add 1 for the closing bracket
-      line += value.length + 1;
+      if (value.length > 0) {
+        // Add 1 for the closing bracket
+        line += value.length + 1;
+      }
     } else if (typeof(value) == 'object') {
       const [recurMatchingLines, recurLine] = objectLineFinderRecursion(value, target);
       if (recurMatchingLines){
