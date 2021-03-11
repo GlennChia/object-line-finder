@@ -1,8 +1,7 @@
 // eslint-disable-next-line
 type interfaceObject = {[key: string]: any};
 
-// eslint-disable-next-line
-function isArray(value: any): boolean{
+function isArray(value: unknown): boolean{
   return Object.prototype.toString.call(value) == '[object Array]';
 }
 
