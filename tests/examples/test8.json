@@ -1,0 +1,29 @@
+[
+    {
+        "firstName": "user",
+        "lastName": "a",
+        "hobbies": [
+            "tennis",
+            "golf"
+        ],
+        "age": 50,
+        "friendsHobbies": [
+            {
+                "firstName": "user",
+                "lastName": "b",
+                "hobbies": [
+                    "soccer",
+                    "football"
+                ]
+            },
+            {
+                "firstName": "user",
+                "lastName": "c",
+                "hobbies": [
+                    "hockey",
+                    "rugby"
+                ]
+            }
+        ]
+    }
+]

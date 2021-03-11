@@ -1,0 +1,13 @@
+{
+  "firstName": "user",
+  "lastName": "a",
+  "hobbies": [
+    [
+      "tennis"
+    ],
+    [
+      "golf"
+    ]
+  ],
+  "age": 50
+}

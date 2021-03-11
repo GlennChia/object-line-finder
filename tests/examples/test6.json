@@ -1,0 +1,11 @@
+{
+  "firstName": "user",
+  "lastName": "a",
+  "hobbies": [
+    {
+      "tennis": 1,
+      "day": "monday"
+    }
+  ],
+  "age": 50
+}
