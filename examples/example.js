@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 const objectLineFinder = require("../build/index");
 
 const example = 
