@@ -14,7 +14,22 @@ Search for line number using an object's key
 Run:
 
 ```bash
-npm i
+npm i --save object-line-finder
+```
+
+Then
+
+```javascript
+const objectLineFinder = require("object-line-finder");
+
+const example = 
+{
+  "firstName": "user",
+  "lastName": "a",
+  "age": 50
+}
+
+console.log(objectLineFinder(example, "age")); // [4]
 ```
 
 # Additional information <a name="additional"></a>

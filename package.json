@@ -1,8 +1,9 @@
 {
   "name": "object-line-finder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Search for line number using an object's key",
-  "main": "index.js",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
     "lint": "npx eslint .",
     "lint-fix": "npx eslint . --fix",
@@ -14,7 +15,9 @@
     "url": "git+https://github.com/GlennChia/object-line-finder.git"
   },
   "keywords": [
-    "search"
+    "search",
+    "object",
+    "line"
   ],
   "author": "GlennChia",
   "license": "ISC",
